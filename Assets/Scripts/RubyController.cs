@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class RubyController : MonoBehaviour
 
     public int maxHealth = 5;
     public float timeInvincible = 2.0f;
+    public int bounceBackEffect = /*25000*/0;
 
     public int health { get { return currentHealth; } }
     int currentHealth;
@@ -97,6 +99,7 @@ public class RubyController : MonoBehaviour
                 return;
 
             isInvincible = true;
+            rigidbody2d.AddForce(new Vector2(-lookDirection.x * bounceBackEffect, -lookDirection.y * bounceBackEffect));
             invincibleTimer = timeInvincible;
             audioSource.PlayOneShot(hitSound);
             animator.SetTrigger("Hit");

@@ -226,6 +226,7 @@ MonoBehaviour:
   speed: 3
   maxHealth: 5
   timeInvincible: 2
+  bounceBackEffect: 0
   projectilePrefab: {fileID: 2966638875295511315, guid: 573cfb9adcc03d947b08675e65131bb3,
     type: 3}
   audioSource: {fileID: 6681884427095714443}
